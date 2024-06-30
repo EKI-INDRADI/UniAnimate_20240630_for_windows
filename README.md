@@ -3,7 +3,9 @@
 https://github.com/EKI-INDRADI/UniAnimate_20240630_for_windows/assets/47073420/3c8874e5-7349-4468-8c33-e9e97a38eeec
 
 update fps to 60 by [flowframes](https://github.com/n00mkrad/flowframes)
-Uploading rank_01_00_00_seed_11_image_randomref_dwpose_WOMENBlouses_Shirtsid_0000495501_4_full_768x512-8x-RIFE-RIFE4.0-64fps.mp4…
+https://github.com/EKI-INDRADI/UniAnimate_20240630_for_windows/assets/47073420/2d5a5d10-dcf0-4b0e-8b58-44e56cd7ed1f
+
+
 
 ```sh
 git clone https://github.com/EKI-INDRADI/UniAnimate_20240630_for_windows.git

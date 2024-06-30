@@ -1,4 +1,11 @@
-# tested 20240630 for windows 
+# tested 20240630 for windows (RTX 3060 12GB)
+
+https://github.com/EKI-INDRADI/UniAnimate_20240630_for_windows/assets/47073420/3c8874e5-7349-4468-8c33-e9e97a38eeec
+
+update fps to 60 by [flowframes](https://github.com/n00mkrad/flowframes)
+
+https://github.com/EKI-INDRADI/UniAnimate_20240630_for_windows/assets/47073420/2d5a5d10-dcf0-4b0e-8b58-44e56cd7ed1f
+
 
 
 ```sh

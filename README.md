@@ -69,13 +69,13 @@ dist.init_process_group(backend='gloo', world_size=cfg.world_size, rank=cfg.rank
 ```
 
 
-# reference (generate video to pose by reference image)
+reference (generate video to pose by reference image)
 
 ```sh
 python run_align_pose.py  --ref_name data/images/WOMEN-Blouses_Shirts-id_00005125-03_4_full.jpg --source_video_paths data/videos/mangoslow_768x512_1.mp4 --saved_pose_dir data/saved_pose/mangoslow_768x512_1_WOMEN-Blouses
 ```
 
-# run (generate pose to video)
+run (generate pose to video)
 ```sh
 python inference.py --cfg configs/UniAnimate_infer_edit.yaml
 ```

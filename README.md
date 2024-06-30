@@ -1,5 +1,9 @@
-# tested 20240630 for windows 
+# tested 20240630 for windows (RTX 3060 12GB)
 
+https://github.com/EKI-INDRADI/UniAnimate_20240630_for_windows/assets/47073420/3c8874e5-7349-4468-8c33-e9e97a38eeec
+
+update fps to 60 by [flowframes](https://github.com/n00mkrad/flowframes)
+Uploading rank_01_00_00_seed_11_image_randomref_dwpose_WOMENBlouses_Shirtsid_0000495501_4_full_768x512-8x-RIFE-RIFE4.0-64fps.mp4…
 
 ```sh
 git clone https://github.com/EKI-INDRADI/UniAnimate_20240630_for_windows.git

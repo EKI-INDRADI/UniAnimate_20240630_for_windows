@@ -1,3 +1,87 @@
+# tested 20240630 for windows 
+
+
+```sh
+git clone https://github.com/EKI-INDRADI/UniAnimate_20240630_for_windows.git
+cd UniAnimate
+conda create -n UniAnimate python=3.9
+conda activate UniAnimate
+conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+pip install -r requirements.txt
+
+pip install modelscope
+```
+
+create modeldownloader.py
+```sh
+from modelscope.hub.snapshot_download import snapshot_download
+model_dir = snapshot_download('iic/unianimate', cache_dir='checkpoints/')
+```
+
+NOTE : run model downloader
+
+```sh
+python modeldownloader.py
+```
+
+Next
+
+```sh
+
+--------------------- AFTER DOWNLOAD
+dont forget 
+
+linux
+mv ./checkpoints/iic/unianimate/* ./checkpoints/
+
+windows
+move "V:\ANIMATE_AYONE\UniAnimate\checkpoints\iic\unianimate\*" "V:\ANIMATE_AYONE\UniAnimate\checkpoints\"
+--------------------- AFTER DOWNLOAD
+
+```
+
+Next
+
+```sh
+pip install opencv-python
+pip install --upgrade --quiet langchain-experimental
+pip install --upgrade --quiet pillow open_clip_torch torch matplotli
+pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu118
+
+pip install rotary-embedding-torch
+pip install fairscale
+pip install nvidia-ml-py3
+pip install easydict
+pip install imageio
+pip install pytorch-lightning
+pip install args
+pip install imageio
+pip install imageio[ffmpeg]
+pip install imageio[pyav]
+pip install onnxruntime
+conda install -c conda-forge pynvml
+
+```
+
+Edit inference_unianimate_entrance.py (change nccl to gloo)
+```sh
+dist.init_process_group(backend='gloo', world_size=cfg.world_size, rank=cfg.rank)
+```
+
+
+# reference (generate video to pose by reference image)
+
+```sh
+python run_align_pose.py  --ref_name data/images/WOMEN-Blouses_Shirts-id_00005125-03_4_full.jpg --source_video_paths data/videos/mangoslow_768x512_1.mp4 --saved_pose_dir data/saved_pose/mangoslow_768x512_1_WOMEN-Blouses
+```
+
+# run (generate pose to video)
+```sh
+python inference.py --cfg configs/UniAnimate_infer_edit.yaml
+```
+
+# ---------------------------------------------------
+
 <!-- main documents -->
 
 

@@ -25,6 +25,25 @@ import torchvision.utils as tvutils
 from multiprocessing.pool import ThreadPool as Pool
 from einops import rearrange
 from PIL import Image, ImageDraw, ImageFont
+#---- SPESIFIC CUDA (RTX 3060 12GB)
+os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+#---- SPESIFIC CUDA (RTX 3060 12GB)
+
+#---- FIX WINDOWS DIR
+def linux_to_windows_path(linux_path: str, drive_letter: str = 'V') -> str:
+    # Replace forward slashes with backslashes
+    windows_path = linux_path.replace('/', '\\')
+    
+    # Prepend the drive letter and colon
+    if not windows_path.startswith(f'{drive_letter}:'):
+        # windows_path = f'{drive_letter}:{windows_path}'
+        windows_path = f'{drive_letter}:\\ANIMATE_AYONE\\UniAnimate\\{windows_path}'
+
+    return windows_path
+  
+#       local_path = linux_to_windows_path(local_path)
+#---- FIX WINDOWS DIR
+
 
 
 def gen_text_image(captions, text_size):
@@ -308,7 +327,6 @@ def save_video_multiple_conditions_not_gif_horizontal_3col(local_path, video_ten
             images = vid_gif * 255.0
             images = [(img.numpy()).astype('uint8') for img in images]
             if len(images) == 1:
-                
                 local_path = local_path.replace('.mp4', '.png')
                 cv2.imwrite(local_path, images[0][:,:,::-1], [int(cv2.IMWRITE_JPEG_QUALITY), 100])
                 # bucket.put_object_from_file(oss_key, local_path)
@@ -320,7 +338,6 @@ def save_video_multiple_conditions_not_gif_horizontal_3col(local_path, video_ten
                     outputs.append(x)
                 from pathlib import Path
                 save_fmt = Path(local_path).suffix
-
                 if save_fmt == ".mp4":
                     with imageio.get_writer(local_path, fps=save_fps) as writer:
                         for img in outputs:

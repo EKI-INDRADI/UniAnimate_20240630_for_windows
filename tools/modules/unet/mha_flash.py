@@ -4,6 +4,9 @@ import torch.cuda.amp as amp
 import torch.nn.functional as F
 import math
 import os
+#---- SPESIFIC CUDA (RTX 3060 12GB)
+os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+#---- SPESIFIC CUDA (RTX 3060 12GB)
 import time
 import numpy as np
 import random

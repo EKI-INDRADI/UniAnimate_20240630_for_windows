@@ -6,6 +6,9 @@
 
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+#---- SPESIFIC CUDA (RTX 3060 12GB)
+os.environ["CUDA_VISIBLE_DEVICES"] = str(1)
+#---- SPESIFIC CUDA (RTX 3060 12GB)
 import cv2
 import torch
 import numpy as np
